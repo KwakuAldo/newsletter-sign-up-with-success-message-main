@@ -18,50 +18,53 @@
   </style>
 </head>
 <body class="font-sans">
-  <main class="relative">
-    <img src="images/illustration-sign-up-mobile.svg" alt="">
-    <form class="flex flex-col gap-y-7 px-5 pt-10">
-      <!-- Sign-up form start -->
+  <main class="relative md:flex md:flex-col md:justify-between md:h-screen">
+    <div class="md:flex md:flex-row-reverse md:p-5 md:justify-around">
+      <img class="mx-auto md:m-0" src="images/illustration-sign-up-mobile.svg" alt="" id="illustration_img">
+      <form class="flex flex-col gap-y-7 px-5 pt-10">
+        <!-- Sign-up form start -->
       
-      <h1 class="text-4xl font-bold text-darkSlateGrey">Stay updated!</h1>
+        <h1 class="text-4xl font-bold text-darkSlateGrey md:text-center md:text-6xl">Stay updated!</h1>
       
-      <p class="">Join 60,000+ product managers receiving monthly updates on:</p>
+        <p class="">Join 60,000+ product managers receiving monthly updates on:</p>
       
-      <div class="flex flex-col gap-y-4">
-        <div class="flex flex-row items-start gap-x-4">
-          <img src="images/icon-list.svg" alt="">
-          <p>Product discovery and building what matters</p>
+        <div class="flex flex-col gap-y-4">
+          <div class="flex flex-row items-start gap-x-4">
+            <img src="images/icon-list.svg" alt="">
+            <p>Product discovery and building what matters</p>
+          </div>
+          <div class="flex flex-row items-start gap-x-4">
+            <img src="images/icon-list.svg" alt="">
+            <p>Measuring to ensure updates are a success</p>
+          </div>
+          <div class="flex flex-row items-start gap-x-4">
+            <img src="images/icon-list.svg" alt="">
+            <p>And much more!</p>
+          </div>
         </div>
-        <div class="flex flex-row items-start gap-x-4">
-          <img src="images/icon-list.svg" alt="">
-          <p>Measuring to ensure updates are a success</p>
-        </div>
-        <div class="flex flex-row items-start gap-x-4">
-          <img src="images/icon-list.svg" alt="">
-          <p>And much more!</p>
-        </div>
-      </div>
       
-      <div class="flex flex-col gap-y-4">
-        <label for="email" class="text-darkSlateGrey text-sm font-bold">Email address</label>
-        <input class="w-full border border-Grey rounded-md p-3" id="email" type="email" placeholder="email@company.com">
-        <button class="bg-charcoalGrey text-White w-full p-3 rounded-md" id="submit">Subscribe to monthly newsletter</button>
-      </div>
-      <!-- Sign-up form end -->
+        <div class="flex flex-col gap-y-4">
+          <label for="email" class="text-darkSlateGrey text-sm font-bold hover:border-charcoalGrey" aria-required="true" pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" title="Enter valid email">Email address</label>
+          <input class="w-full border border-Grey rounded-md p-3" id="email" type="email" placeholder="email@company.com">
+          <button class="bg-charcoalGrey hover:bg-Tomato text-White w-full p-3 rounded-md " id="submit">Subscribe to monthly
+            newsletter</button>
+        </div>
+        <!-- Sign-up form end -->
       
-    </form>
-    <!-- Success message start -->
-    
-    <div class="hidden absolute top-0 bg-White flex-col justify-around h-full px-5" id="alertMsg">
-      <div class="flex flex-col gap-y-4">
-        <img class="w-16" src="images/icon-success.svg" alt="">
-        <h1 class="text-4xl font-bold text-darkSlateGrey">Thanks for subscribing!</h1>
-        
-        <p>A confirmation email has been sent to ash@loremcompany.com.
-          Please open it and click the button inside to confirm your subscription.</p>
+      </form>
+      <!-- Success message start -->
+      
+      <div class="hidden absolute top-0 bg-White flex-col justify-around h-full px-5 md:inset-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 md:w-[29rem] md:h-[29rem] md:p-12 md:rounded-md" id="alertMsg_El">
+        <div class="flex flex-col gap-y-4">
+          <img class="w-16" src="images/icon-success.svg" alt="">
+          <h1 class="text-4xl font-bold text-darkSlateGrey">Thanks for subscribing!</h1>
+      
+          <p> confirmation email has been sent to <span class="font-bold" id="user_email"></span>.
+            Please open it and click the button inside to confirm your subscription.</p>
+        </div>
+      
+        <button class="bg-charcoalGrey hover:bg-Tomato text-White w-full p-3 rounded-md" id="dismissAlert">Dismiss message</button>
       </div>
-    
-      <button class="bg-charcoalGrey text-White w-full p-3 rounded-md" id="dismissAlert">Dismiss message</button>
     </div>
     
     <!-- Success message end -->
@@ -69,6 +72,7 @@
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="https://github.com/KwakuAldo" target="_blank">Aldo Efui Adabunu</a>.
     </div>
+    <div class="fixed inset-0 bg-charcoalGrey z-10 hidden" id="overlay"></div>
   </main>
 
   <script src="index.js"></script>
