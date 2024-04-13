@@ -13,13 +13,13 @@
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: white; }
+    .attribution a { color: hsl(228, 45%, 44%); }
     .attribution { margin-top: 1.25rem;}
   </style>
 </head>
 <body class="font-sans">
-  <main class="relative bg-charcoalGrey md:flex md:flex-col md:justify-between md:h-screen">
-    <div class="bg-White md:flex md:flex-row-reverse md:p-5 md:justify-around md:m-auto md:rounded-3xl md:gap-x-5">
+  <main class="relative md:bg-charcoalGrey md:flex md:flex-col md:justify-between md:h-screen">
+    <div class="bg-White md:flex md:flex-row-reverse md:p-5 md:justify-around md:m-auto md:rounded-3xl md:gap-x-5" id="form_container">
       <img class="mx-auto md:m-0" src="images/illustration-sign-up-mobile.svg" alt="" id="illustration_img">
       <form class="flex flex-col gap-y-7 px-5 pt-10">
         <!-- Sign-up form start -->
@@ -52,27 +52,32 @@
         <!-- Sign-up form end -->
       
       </form>
-      <!-- Success message start -->
       
-      <div class="hidden absolute top-0 bg-White flex-col justify-around h-full px-5 md:inset-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 md:w-[29rem] md:h-[29rem] md:p-12 md:rounded-md" id="alertMsg_El">
-        <div class="flex flex-col gap-y-4">
-          <img class="w-16" src="images/icon-success.svg" alt="">
-          <h1 class="text-4xl font-bold text-darkSlateGrey">Thanks for subscribing!</h1>
-      
-          <p> confirmation email has been sent to <span class="font-bold" id="user_email"></span>.
-            Please open it and click the button inside to confirm your subscription.</p>
-        </div>
-      
-        <button class="bg-charcoalGrey hover:bg-Tomato text-White w-full p-3 rounded-md" id="dismissAlert">Dismiss message</button>
+    </div>
+    
+    <!-- Success message start -->
+    
+    <div
+      class="hidden absolute top-0 bg-White flex-col justify-around h-full px-5 md:inset-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 md:w-[29rem] md:h-[29rem] md:p-12 md:rounded-md"
+      id="alertMsg_El">
+      <div class="flex flex-col gap-y-4">
+        <img class="w-16" src="images/icon-success.svg" alt="">
+        <h1 class="text-4xl font-bold text-darkSlateGrey">Thanks for subscribing!</h1>
+    
+        <p> confirmation email has been sent to <span class="font-bold" id="user_email"></span>.
+          Please open it and click the button inside to confirm your subscription.</p>
       </div>
+    
+      <button class="bg-charcoalGrey hover:bg-Tomato text-White w-full p-3 rounded-md" id="dismissAlert">Dismiss
+        message</button>
     </div>
     
     <!-- Success message end -->
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="https://github.com/KwakuAldo" target="_blank">Aldo Efui Adabunu</a>.
+    <div class="text-xs text-center mt-5">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" class="text-blue-600 md:text-White" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/KwakuAldo" class="text-blue-600 md:text-White" target="_blank">Aldo Efui Adabunu</a>.
     </div>
-    <div class="fixed inset-0 bg-charcoalGrey z-10 hidden" id="overlay"></div>
+    <!-- <div class="fixed inset-0 bg-charcoalGrey z-10 hidden" id="overlay"></div> -->
   </main>
 
   <script src="index.js"></script>
