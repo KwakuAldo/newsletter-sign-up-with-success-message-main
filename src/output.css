@@ -1,3 +1,10 @@
+.email-error-warning {
+  border-color: hsl(4, 100%, 67%);
+  border-width: 1px;
+  background: hsla(4, 100%, 67%, 0.1);
+  color: hsl(4, 100%, 67%);
+}
+
 /*
 ! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com
 */
@@ -574,10 +581,6 @@ video {
   top: 0px;
 }
 
-.bottom-0 {
-  bottom: 0px;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -589,6 +592,10 @@ video {
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.inline {
+  display: inline;
 }
 
 .flex {
@@ -621,6 +628,10 @@ video {
 
 .items-start {
   align-items: flex-start;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .justify-around {
@@ -703,6 +714,11 @@ video {
   font-weight: 700;
 }
 
+.text-Tomato {
+  --tw-text-opacity: 1;
+  color: hsl(4 100% 67% / var(--tw-text-opacity));
+}
+
 .text-White {
   --tw-text-opacity: 1;
   color: hsl(0 0% 100% / var(--tw-text-opacity));
@@ -753,16 +769,16 @@ video {
     height: 100vh;
   }
 
-  .md\:w-\[29rem\] {
-    width: 29rem;
+  .md\:w-\[24rem\] {
+    width: 24rem;
   }
 
   .md\:w-\[25rem\] {
     width: 25rem;
   }
 
-  .md\:w-\[24rem\] {
-    width: 24rem;
+  .md\:w-\[29rem\] {
+    width: 29rem;
   }
 
   .md\:-translate-x-1\/2 {
@@ -823,11 +839,6 @@ video {
 
   .md\:text-center {
     text-align: center;
-  }
-
-  .md\:text-6xl {
-    font-size: 3.75rem;
-    line-height: 1;
   }
 
   .md\:text-5xl {

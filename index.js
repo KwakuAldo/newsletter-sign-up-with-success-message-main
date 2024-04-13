@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitBtn = document.getElementById('submit');
     const alertMsgEl = document.getElementById('alertMsg_El');
     const dismissBtn = document.getElementById('dismissAlert');
+    let emailError = document.getElementById('email_error')
+    let emailInput = document.getElementById('email');
+    let userEmail = document.getElementById('user_email');
 
 
     //switch between illustration sign up image depending on screen size
@@ -17,14 +20,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     submitBtn.addEventListener('click', (e) => {
         e.preventDefault()
-        formContainer.classList.remove('md:flex');
-        formContainer.classList.add('hidden');
-        alertMsgEl.classList.remove('hidden');
-        alertMsgEl.classList.add('flex');
-        let emailInput = document.getElementById('email');
-        let userEmail = document.getElementById('user_email');
-        userEmail.innerText = emailInput.value;
-        console.log(userEmail.innerText);
+        
+        // Validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // check if email is valid or empty
+        if (emailRegex.test(emailInput.value)) {
+            emailError.innerText = '';
+            formContainer.classList.remove('md:flex');
+            formContainer.classList.add('hidden');
+            alertMsgEl.classList.remove('hidden');
+            alertMsgEl.classList.add('flex');
+            userEmail.innerText = emailInput.value;
+            console.log(userEmail.innerText);
+        } else {
+            // Show error message
+            emailError.classList.remove('hidden')
+            emailError.classList.add('inline')
+            emailError.innerText = 'Valid email required';
+            emailInput.classList.remove('border-Grey')
+            emailInput.classList.add('email-error-warning')
+        }
     })
 
 
@@ -33,6 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
         alertMsgEl.classList.add('hidden')
         formContainer.classList.remove('hidden')
         formContainer.classList.add('md:flex')
+        emailInput.value = '';
+        emailInput.classList.remove('email-error-warning')
+        emailInput.classList.add('border-Grey')
     })
 
 

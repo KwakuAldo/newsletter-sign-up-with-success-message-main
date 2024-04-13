@@ -16,6 +16,7 @@ module.exports = {
       colors: {
         // Primary colors
         Tomato: 'hsl(4, 100%, 67%)',
+        lightTomato: 'hsla(4, 100%, 67%, 0.1)',
 
         // Neutral colors
         darkSlateGrey: 'hsl(234, 29%, 20%)',
